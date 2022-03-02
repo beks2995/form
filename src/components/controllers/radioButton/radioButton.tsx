@@ -8,14 +8,16 @@ const RadioButton = ({name, control, formData, btn}: IRadioBtnsProps) => {
         <Controller
             name={name}
             control={control}
-            render={({field: {onChange, value}}) => (
-            <Radio.Group
-                options={formData}
-                optionType={btn ? "button" : "default"}
-                className='radio-group-custom'
-                value={value}
-                onChange={(e) => onChange(e.target.value)} />
-        )}/>
+            render={({field: {onChange, value}}) => {
+                return (
+                    <Radio.Group
+                        options={formData}
+                        optionType={btn ? "button" : "default"}
+                        className='radio-group-custom'
+                        value={value}
+                        onChange={(e) => onChange(e.target.value)} />
+                )
+            }}/>
     );
 };
 

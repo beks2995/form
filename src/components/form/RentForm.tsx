@@ -43,6 +43,10 @@ const RentForm = () => {
         alert(JSON.stringify(data))
     };
 
+    React.useEffect(() => {
+        console.log('errors', errors);
+    }, [errors]);
+
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>

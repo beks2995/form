@@ -20,7 +20,7 @@ const FlatForm = ({  control}: IFormProps) => {
                 <Select name={'Heating'} control={control as ControlType} formData={formData.heating}/>
                 <InputLabel text={'Тип строения'}/>
                 <RadioButton name={'BuildingType'} control={control as ControlType} formData={formData.buildingType} btn/>
-                <InputLabel text={'Площадь'}/>
+                <InputLabel text={'Площадь1'}/>
                 <div style={{display: 'flex'}}>
                     <InputNumber name={'Area_all'} control={control as ControlType} min={-4} max={10} label={'Общая'} m2/>
                     <InputNumber name={'Area_live'} control={control as ControlType} min={-4} max={10} label={'Жилая'} m2/>
