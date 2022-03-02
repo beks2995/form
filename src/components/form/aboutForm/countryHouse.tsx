@@ -7,6 +7,7 @@ import formData from "../../formData/formData";
 import RadioButton from "../../controllers/radioButton/radioButton";
 import InputNumber from "../../controllers/inputNumber/inputNumber";
 
+// TODO same flow
 const CountryHouse = ({control}: IFormProps) => {
     return (
         <>

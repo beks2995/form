@@ -1,3 +1,4 @@
+// todo unuse variables
 import React from 'react';
 import Heading from "../../heading/heading";
 import InputLabel from "../../inputLabel/inputLabel";
@@ -6,7 +7,7 @@ import {ControlType, IFormProps} from "../../types/types";
 import formData from "../../formData/formData";
 import RadioButton from "../../controllers/radioButton/radioButton";
 import InputNumber from "../../controllers/inputNumber/inputNumber";
-
+// TODO flow
 const Garage = ({control}: IFormProps) => {
     return (
         <>

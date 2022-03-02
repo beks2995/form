@@ -1,10 +1,14 @@
 import React from 'react';
 
-interface Interface {
-    text: string
-}
+// todo naming - type
+// interface Interface {
+//     text: string
+// }
 
-const InputLabel = ({text}:Interface) => {
+// return type
+// const InputLabel: React.FC = (props) => <label className='input-label'>{props.children}</label>;
+// // return type
+const InputLabel: React.FC<{text: string}> = ({text}) => {
     return (
         <label className='input-label'>
             {text}

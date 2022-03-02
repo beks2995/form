@@ -8,6 +8,7 @@ interface IRadioBtnsProps {
     control: ControlType,
     formData: CheckboxOptionType[],
     btn: boolean,
+    optionType?: 'default' | 'button',
 }
 interface ISelectProps {
     name: keyof TFormValues,
@@ -20,8 +21,9 @@ interface IInputNumberProps {
     min: number,
     max: number,
     label: string,
-    m2: boolean
+    m2: boolean // pls use understadable namings
 }
+
 // TODO
 // interface IFormDataProps {
 //     name: FormNames,

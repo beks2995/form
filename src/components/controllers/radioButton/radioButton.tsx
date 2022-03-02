@@ -1,9 +1,11 @@
+// TODO remove unuse variables
 import React, {VFC} from 'react';
 import {Radio} from "antd";
 import {Controller} from "react-hook-form";
 import {IRadioBtnsProps} from "../../types/types";
 
-const RadioButton = ({name, control, formData, btn}: IRadioBtnsProps) => {
+// TODO return type
+const RadioButton = ({name, control, formData, optionType = 'default'}: IRadioBtnsProps) => {
     return (
         <Controller
             name={name}
@@ -11,7 +13,7 @@ const RadioButton = ({name, control, formData, btn}: IRadioBtnsProps) => {
             render={({field: {onChange, value}}) => (
             <Radio.Group
                 options={formData}
-                optionType={btn ? "button" : "default"}
+                optionType={optionType}
                 className='radio-group-custom'
                 value={value}
                 onChange={(e) => onChange(e.target.value)} />

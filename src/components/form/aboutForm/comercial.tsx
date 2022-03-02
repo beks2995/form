@@ -7,6 +7,7 @@ import formData from "../../formData/formData";
 import RadioButton from "../../controllers/radioButton/radioButton";
 import InputNumber from "../../controllers/inputNumber/inputNumber";
 
+// todo return type
 const Comercial = ({control}:IFormProps) => {
     return (
         <>
@@ -15,7 +16,7 @@ const Comercial = ({control}:IFormProps) => {
                 <InputLabel text={'Отопление'}/>
                 <Select name={'Heating'} control={control as ControlType} formData={formData.heating}/>
                 <InputLabel text={'Тип строения'}/>
-                <RadioButton name={'BuildingType'} control={control as ControlType} formData={formData.buildingType} btn/>
+                {/* <RadioButton name={'BuildingType'} control={control as ControlType} formData={formData.buildingType} btn/> */}
                 <InputLabel text={'Площадь'}/>
                 <div style={{display: 'flex'}}>
                     <InputNumber name={'Area_all'} control={control as ControlType} min={-4} max={10} label={'Общая'} m2/>

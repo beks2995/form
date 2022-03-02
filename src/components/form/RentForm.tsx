@@ -15,6 +15,36 @@ import Plot from "./aboutForm/plot";
 import Room from "./aboutForm/room";
 import Garage from "./aboutForm/garage";
 
+// TODO any type // TODO return type
+// const DynamicForm = (watchBuilding: string, control: any) => {
+
+//     switch (watchBuilding) {
+//         case 'flat':
+//             return <FlatForm control={control}/>
+
+//         default:
+//             return;
+//     }
+
+//     return {watchBuilding[0] === 'flat'
+//     ? <FlatForm control={control}/>
+//     : watchBuilding[0] === 'house'
+//         ? <HouseForm control={control}/>
+//         : watchBuilding[0] === 'commercial'
+//             ? <Comercial control={control}/>
+//             : watchBuilding[0] === 'plot'
+//                 ? <Plot control={control}/>
+//                 : watchBuilding[0] === 'room'
+//                     ? <Room control={control}/>
+//                     : watchBuilding[0] === 'countryHouse'
+//                         ? <CountryHouse control={control}/>
+//                         : watchBuilding[0] === 'garage'
+//                             ? <Garage control={control}/>
+//                             : <> </>}
+// }
+
+
+
 const defaultValues = {
     AccType: 'owner',
     AdType: 'sell',
@@ -30,6 +60,7 @@ const RentForm = () => {
         reset,
         watch,
         control,
+        // todo remove unuse variable
         formState: {errors}
     }
         = useForm<TFormValues>({
@@ -48,14 +79,29 @@ const RentForm = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Heading text={'Тип объявления'}/>
                 <div className='d-flex'>
-                    <InputLabel text={'Тип аккаунта'}/>
-                    <RadioButton name={'AccType'} control={control as ControlType} formData={formData.accType} btn/>
-                    <InputLabel text={'Тип объявления'}/>
-                    <RadioButton name={'AdType'} control={control as ControlType} formData={formData.adType} btn/>
-                    <InputLabel text={'Объект'}/>
-                    <RadioButton name={'Building'} control={control as ControlType} formData={formData.building}
-                                 btn={false}/>
+                    <InputLabel text='Тип аккаунта' />
+                    {
+                        [
+                            {
+                                name: 'AccType',
+                                formData: formData.accType,
+                                btn: true
+                            },
+                            {
+                                name: 'AdType',
+                                formData: formData.accType,
+                                btn: true
+                            },
+                            {
+                                name: 'Building',
+                                formData: formData.accType,
+                                btn: false
+                            },
+                        ].map(({name, formData, btn}) => <RadioButton name={name as any} control={control as ControlType} formData={formData} btn={btn}/>)
+                    }
+                    
                 </div>
+                {/* TODO refactor */}
                 {watchBuilding[0] === 'flat'
                     ? <FlatForm control={control}/>
                     : watchBuilding[0] === 'house'

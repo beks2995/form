@@ -1,6 +1,7 @@
 import React from 'react';
 import Heading from "../../heading/heading";
 import InputLabel from "../../inputLabel/inputLabel";
+// todo FLOW
 import Select from "../../controllers/select/select";
 import {ControlType, IFormProps} from "../../types/types";
 import formData from "../../formData/formData";
