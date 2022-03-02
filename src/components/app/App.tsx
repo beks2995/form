@@ -1,7 +1,8 @@
 import React from 'react';
 import RentForm from "../form/RentForm";
 
-
+// remove spaces
+// TODO return type
 function App() {
     return (
       <div>

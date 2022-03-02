@@ -1,9 +1,14 @@
 import { object, string, number } from 'yup';
 
-const areaAllValArr: Array<number> = new Array(99).fill(null).map((el, idx) => idx + 1);
+const requiredString = string().required('Это поле у нас обязательное');
+
+// todo remove el unuse vars.
+// todo return type
+const areaAllValArr: number[] = new Array(99).fill(null).map((el, idx) => idx + 1);
+// todo remove and use DRY
 export const schema = object().shape({
     number: number().min(-4).max(48).required('Это поле обязательно'),
-    Rooms: string().min(1).required('обязательно'),
+    Rooms: requiredString.min(1),
     Series: string().min(1).required('обязательно'),
     BuildingType: string().min(1).required('обязательно'),
     Area_all: number().min(1, 'Площадь не должна быть меньше 1').required('обязательно').oneOf(areaAllValArr, 'выберите число меньше 99').typeError('Укажите цифру'),

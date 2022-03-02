@@ -5,34 +5,51 @@ export type ControlType = Control<Partial<TFormValues>>;
 
 export type TOptionType = 'default' | 'button'
 
-type TFieldItem = {
-  name: keyof TFormValues,
-  formData: CheckboxOptionType[],
-  optionType?: TOptionType,
-  label?: JSX.Element
+type NameType = {
+  name: keyof TFormValues;
+  formData: CheckboxOptionType[];
+  label?: JSX.Element;
 }
+
+type TFieldItem = {
+  optionType?: TOptionType, // TODO duplication
+} & NameType;
+
+// TODO examples
+// type TFieldItemRequired = Required<TFieldItem>;
+
+type TFieldItem2 = {
+  optionType?: TOptionType, // TODO duplication
+} & Omit<NameType, 'label'>;
+
+// type TFieldItem = {
+//   name: keyof TFormValues, // TODO duplication
+//   formData: CheckboxOptionType[], // TODO duplication
+//   optionType?: TOptionType, // TODO duplication
+//   label?: JSX.Element
+// }
 type TFieldWithRadio = {
-  name: keyof TFormValues,
+  name: keyof TFormValues,  // TODO duplication
   control: ControlType,
-  formData: CheckboxOptionType[],
+  formData: CheckboxOptionType[], // TODO duplication
   optionType?: TOptionType,
   label?: JSX.Element
 }
 interface IRadioBtnsProps {
-  name: keyof TFormValues,
+  name: keyof TFormValues,  // TODO duplication
   control: ControlType,
-  formData: CheckboxOptionType[],
-  optionType?: TOptionType,
+  formData: CheckboxOptionType[], // TODO duplication
+  optionType?: TOptionType, // TODO duplication
 }
 
 interface ISelectProps {
-  name: keyof TFormValues,
-  control: ControlType,
-  formData: CheckboxOptionType[],
+  name: keyof TFormValues,  // TODO duplication
+  control: ControlType, // TODO duplication
+  formData: CheckboxOptionType[], // TODO duplication
 }
 
 interface IInputNumberProps {
-  name: keyof TFormValues,
+  name: keyof TFormValues,  // TODO duplication
   control: ControlType,
   label: string,
   square: boolean
@@ -46,6 +63,8 @@ interface IDynamicForm {
 interface IFormProps {
   control: Control<TFormValues>
 }
+// example
+// type TFormValues2 = Record<string, string | number>;
 
 type TFormValues = {
   AccType: string,

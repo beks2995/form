@@ -14,7 +14,8 @@ const RadioButton: VFC<IRadioBtnsProps> = ({name, control, formData, optionType 
           optionType={optionType}
           className='radio-group-custom'
           value={value}
-          onChange={(e) => onChange(e.target.value)}/>
+          // TODO pls check it is it working
+          onChange={onChange}/>
       )}/>
   );
 };

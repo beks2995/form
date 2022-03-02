@@ -11,6 +11,7 @@ const InputNumber: VFC<IInputNumberProps> = ({name, control, label, square}) => 
         {/* // todo recreate styles without using inline-styles */}
         {square && <span className='square'>м<sup>2</sup></span>}
         {label && <span>{label}</span>}
+        {/* todo remove console */}
         {console.log(fieldState)}
         {fieldState.error?.message && <span className='notice'>{fieldState.error?.message}</span>}
       </div>

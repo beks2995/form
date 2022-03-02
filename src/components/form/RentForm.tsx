@@ -9,6 +9,7 @@ import InputLabel from "../inputLabel/inputLabel";
 import DynamicForm from "./dynamicForm";
 import Field from "./component/field/field";
 
+// move folder const
 const defaultValues = {
     AccType: 'owner',
     AdType: 'sell',
@@ -18,23 +19,27 @@ const defaultValues = {
     Heating: 'central'
 };
 
+// TODO return type
 const RentForm = () => {
     const {
         handleSubmit,
         reset,
         watch,
         control
-    }
+    } // todo spaces
         = useForm<TFormValues>({
         defaultValues,
         resolver: yupResolver(schema)
     });
 
     const watchBuilding = watch(['Building']);
-    const onSubmit: SubmitHandler<TFormValues> = data => {
+
+    // todo return type
+    const onSubmit: SubmitHandler<TFormValues> = (data): void => {
         alert(JSON.stringify(data))
     };
 
+    // todo move to folder consts
     const radioButtonsList: TFieldItem[] = [
         {
             name: 'AccType',
@@ -56,18 +61,21 @@ const RentForm = () => {
         },
     ];
 
+    // todo remove useless <></>
     return (
-        <>
+        <> 
             <form onSubmit={handleSubmit(onSubmit)}>
+                {/* pls refactor Heading Component */}
                 <Heading text={'Тип объявления'}/>
                 <div className='wrapper'>
-
+                    {/* remove spaces */}
                     {
+                      // return type
                         radioButtonsList.map(({name, formData, optionType, label}) => (
                             <Field key={name} name={name} formData={formData} label={label} optionType={optionType} control={control as ControlType}/>
                             ))
                     }
-                    
+                    {/* remove spaces */}
                 </div>
                 <DynamicForm watchBuilding={watchBuilding[0]} control={control}/>
 
