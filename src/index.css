@@ -8,7 +8,18 @@
     max-width: 700px;
     border: 1px solid #000;
 }
-.d-flex{
+.wrapper{
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+.notice{
+    color: red;
+}
+.square{
+    margin-left: 4px;
+}
+.input-item{
+    max-width: 100px;
+    display: flex;
+    flex-wrap: wrap;
 }
