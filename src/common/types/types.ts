@@ -3,7 +3,7 @@ import {CheckboxOptionType} from "antd";
 
 export type ControlType = Control<Partial<TFormValues>>;
 export type TOptionType = 'default' | 'button'
-
+// TODO Pick, Omit exapmle
 type NameType = {
   name: keyof TFormValues;
 }

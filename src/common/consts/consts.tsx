@@ -1,7 +1,6 @@
 import {TFieldItem, TFormValues} from "../types/types";
 import formData from "../dummy/formData";
 import InputLabel from "../../components/inputLabel/inputLabel";
-import React from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {schema} from "../../utils/validation/shema";
@@ -26,6 +25,7 @@ export const radioButtonsList: TFieldItem[] = [
     label: <InputLabel>Объект</InputLabel>
   },
 ];
+
 export const defaultValues = {
   AccType: 'owner',
   AdType: 'sell',
@@ -34,6 +34,8 @@ export const defaultValues = {
   Series: 'elit',
   Heating: 'central'
 };
+
+// todo return type && move to utils|hooks, hooks with lowercase
 export const UseFormAddAd = () => {
   const {
     handleSubmit,

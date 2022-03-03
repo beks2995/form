@@ -14,3 +14,13 @@ function App(): JSX.Element {
 }
 
 export default App;
+
+
+/**
+ *  configure tsconfig.json
+ *  - paths with lowercase
+ *  - styled-component https://styled-components.com/
+ *  - sass - install
+ * 
+ * 
+ */

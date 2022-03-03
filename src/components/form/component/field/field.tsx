@@ -1,8 +1,8 @@
 import React from 'react';
-
+// remove space
 import RadioButton from "@Components/radioButton/radioButton";
 import {ControlType, TFieldWithRadio} from "@Common/types/types";
-
+// todo return type
 const Field = ({name, formData,control, label, optionType}: TFieldWithRadio) => {
   return (
     // <>

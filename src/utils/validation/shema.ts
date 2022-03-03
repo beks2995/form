@@ -3,8 +3,10 @@ import {object, string, number} from 'yup';
 const requiredSelect = string().required('Это поле у нас обязательное');
 const requiredArea = number().required('обязательно').typeError('Укажите цифру');
 const requiredFloor = number().min(-4, 'Этаж не может быть меньше минус 4').max(48, 'Максимальное количество этажей 48').required('обязательно').typeError('Укажите цифру');
+// todo requiree DRY MIN|Required
+const requiredFunc = (object = string()) => object.required('Field is required');
 
-const areaAllValArr: number[] = new Array(99).fill(null).map((item, idx): number =>{return item = idx + 1});
+const areaAllValArr: number[] = new Array(99).fill(null).map((item, idx): number => (item = idx + 1));
 
 export const schema = object().shape({
   Rooms: requiredSelect,
