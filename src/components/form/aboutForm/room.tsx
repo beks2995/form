@@ -1,32 +1,32 @@
 import React, {VFC} from 'react';
-import Heading from "../../heading/heading";
-import InputLabel from "../../inputLabel/inputLabel";
-import Select from "../../controllers/select/select";
-import {ControlType, IFormProps} from "../../types/types";
-import formData from "../../formData/formData";
-import RadioButton from "../../controllers/radioButton/radioButton";
-import InputNumber from "../../controllers/inputNumber/inputNumber";
+import Heading from "@Components/heading/heading";
+import RadioButton from "@Components/radioButton/radioButton";
+import {ControlType, TFormProps} from "@Common/types/types";
+import formData from "@Common/dummy/formData";
+import InputLabel from "@Components/inputLabel/inputLabel";
+import Select from "@Components/select/select";
+import InputNumber from "@Components/inputNumber/inputNumber";
 
-const Room: VFC<IFormProps> = ({control}) => {
+const Room: VFC<TFormProps> = ({control}) => {
+  const controls = control as ControlType;
   return (
     <>
-      <Heading text={'Об объекте'}/>
+      <Heading>Об объекте</Heading>
       <div className="wrapper">
-        <InputLabel text={'Серия'}/>
-        <Select name={'Series'} control={control as ControlType} formData={formData.series}/>
-        <InputLabel text={'Отопление'}/>
-        <Select name={'Heating'} control={control as ControlType} formData={formData.heating}/>
-        <InputLabel text={'Тип строения'}/>
-        <RadioButton name={'BuildingType'} control={control as ControlType} formData={formData.buildingType}/>
-        <InputLabel text={'Этаж'}/>
-        <div style={{display: 'flex', alignItems: "center"}}>
-          <InputNumber name={'Floor'} control={control as ControlType} label={''} square={false}/>
+        <InputLabel>Серия</InputLabel>
+        <Select name={'Series'} control={controls} formData={formData.series}/>
+        <InputLabel>Отопление</InputLabel>
+        <Select name={'Heating'} control={controls} formData={formData.heating}/>
+        <InputLabel>Тип строения</InputLabel>
+        <RadioButton name={'BuildingType'} control={controls} formData={formData.buildingType}/>
+        <InputLabel>Этаж</InputLabel>
+        <div className='d-flex align-items-center'>
+          <InputNumber name={'Floor'} control={controls} label={''} square={false}/>
           <span>из</span>
-          <InputNumber name={'FloorOf'} control={control as ControlType} label={''} square={false}/>
+          <InputNumber name={'FloorOf'} control={controls} label={''} square={false}/>
         </div>
-        <InputLabel text={'Высота потолков'}/>
-        <InputNumber name={'Ceil'} control={control as ControlType} label={''} square={false}/>
-
+        <InputLabel>Высота потолков</InputLabel>
+        <InputNumber name={'Ceil'} control={controls} label={''} square={false}/>
       </div>
     </>
   );

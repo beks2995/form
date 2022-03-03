@@ -1,5 +1,5 @@
 import React, {VFC} from 'react';
-import {IDynamicForm} from "../types/types";
+import {TDynamicForm} from "@Common/types/types";
 import FlatForm from "./aboutForm/flatForm";
 import HouseForm from "./aboutForm/houseForm";
 import Commercial from "./aboutForm/commercial";
@@ -8,7 +8,7 @@ import Room from "./aboutForm/room";
 import CountryHouse from "./aboutForm/countryHouse";
 import Garage from "./aboutForm/garage";
 
-const DynamicForm: VFC<IDynamicForm> = ({watchBuilding, control}) => {
+const DynamicForm: VFC<TDynamicForm> = ({watchBuilding, control}) => {
     switch (watchBuilding) {
       case 'flat':
         return <FlatForm control={control}/>;

@@ -1,9 +1,9 @@
-import React, { VFC } from 'react';
+import React, {VFC} from 'react';
 import {Radio} from "antd";
 import {Controller} from "react-hook-form";
-import {IRadioBtnsProps} from "../../types/types";
+import {TRadioBtnsProps} from "@Common/types/types";
 
-const RadioButton: VFC<IRadioBtnsProps> = ({name, control, formData, optionType = 'default'}) => {
+const RadioButton: VFC<TRadioBtnsProps> = ({name, control, formData, optionType = 'default'}) => {
   return (
     <Controller
       name={name}
@@ -14,7 +14,6 @@ const RadioButton: VFC<IRadioBtnsProps> = ({name, control, formData, optionType 
           optionType={optionType}
           className='radio-group-custom'
           value={value}
-          // TODO pls check it is it working
           onChange={onChange}/>
       )}/>
   );

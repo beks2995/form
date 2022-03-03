@@ -1,35 +1,33 @@
 import React, {VFC} from 'react';
-import Heading from "../../heading/heading";
-import InputLabel from "../../inputLabel/inputLabel";
-import Select from "../../controllers/select/select";
-import {ControlType, IFormProps} from "../../types/types";
-import formData from "../../formData/formData";
-import RadioButton from "../../controllers/radioButton/radioButton";
-import InputNumber from "../../controllers/inputNumber/inputNumber";
+import Heading from "@Components/heading/heading";
+import RadioButton from "@Components/radioButton/radioButton";
+import {ControlType, TFormProps} from "@Common/types/types";
+import formData from "@Common/dummy/formData";
+import InputLabel from "@Components/inputLabel/inputLabel";
+import Select from "@Components/select/select";
+import InputNumber from "@Components/inputNumber/inputNumber";
 
-// todo return type
-const Commercial:VFC<IFormProps> = ({control}) => {
-    const controls = control as ControlType;
-    return (
-        <>
-            <Heading text={'Об объекте'}/>
-            <div className="wrapper">
-                <InputLabel text={'Отопление'}/>
-                <Select name={'Heating'} control={controls} formData={formData.heating}/>
-                <InputLabel text={'Тип строения'}/>
-                 <RadioButton name={'BuildingType'} control={controls} formData={formData.buildingType}/>
-                <InputLabel text={'Площадь'}/>
-                <div style={{display: 'flex'}}>
-                    <InputNumber name={'Area_all'} control={controls} label={'Общая'} square/>
-                    <InputNumber name={'Area_live'} control={controls} label={'Жилая'} square/>
-                    <InputNumber name={'Area_kitchen'} control={controls} label={'Кухня'} square/>
-                </div>
-                <InputLabel text={'Площадь участка (в сотках)'}/>
-                <InputNumber name={'Area_house'} control={controls} label={''} square={false}/>
-                {/* todo pls use close tag with normal space */}
-               </div>
-        </>
-    );
+const Commercial: VFC<TFormProps> = ({control}) => {
+  const controls = control as ControlType;
+  return (
+    <>
+      <Heading>Об объекте</Heading>
+      <div className="wrapper">
+        <InputLabel>Отопление</InputLabel>
+        <Select name={'Heating'} control={controls} formData={formData.heating}/>
+        <InputLabel>Тип строения</InputLabel>
+        <RadioButton name={'BuildingType'} control={controls} formData={formData.buildingType}/>
+        <InputLabel>Площадь</InputLabel>
+        <div className='d-flex'>
+          <InputNumber name={'Area_all'} control={controls} label={'Общая'} square/>
+          <InputNumber name={'Area_live'} control={controls} label={'Жилая'} square/>
+          <InputNumber name={'Area_kitchen'} control={controls} label={'Кухня'} square/>
+        </div>
+        <InputLabel>Площадь участка (в сотках)</InputLabel>
+        <InputNumber name={'Area_house'} control={controls} label={''} square={false}/>
+      </div>
+    </>
+  );
 };
 
 export default Commercial;

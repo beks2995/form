@@ -1,19 +1,20 @@
 import React, {VFC} from 'react';
-import Heading from "../../heading/heading";
-import InputLabel from "../../inputLabel/inputLabel";
-import {ControlType, IFormProps} from "../../types/types";
-import InputNumber from "../../controllers/inputNumber/inputNumber";
+import Heading from "@Components/heading/heading";
+import {ControlType, TFormProps} from "@Common/types/types";
+import InputLabel from "@Components/inputLabel/inputLabel";
+import InputNumber from "@Components/inputNumber/inputNumber";
 
-const Plot: VFC<IFormProps> = ({control}) => {
-    return (
-        <>
-            <Heading text={'Об объекте'}/>
-            <div className="wrapper">
-                <InputLabel text={'Площадь участка (в сотках)'}/>
-                <InputNumber name={'Area_house'} control={control as ControlType} label={''} square={false}/>
-                 </div>
-        </>
-    );
+const Plot: VFC<TFormProps> = ({control}) => {
+  const controls = control as ControlType;
+  return (
+    <>
+      <Heading>Об объекте</Heading>
+      <div className="wrapper">
+        <InputLabel>Площадь участка (в сотках)</InputLabel>
+        <InputNumber name={'Area_house'} control={controls} label={''} square={false}/>
+      </div>
+    </>
+  );
 };
 
 export default Plot;
