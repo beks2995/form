@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const InputLabel: React.FC = (props) => <label className='input-label'>{props.children}</label>;
+const InputLabel: React.FC = (props) => <label className="input-label">{props.children}</label>
 
-export default InputLabel;
+export default InputLabel

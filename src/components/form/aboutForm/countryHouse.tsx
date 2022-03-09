@@ -1,18 +1,19 @@
-import React, {VFC} from 'react';
-import Heading from "@Components/heading/heading";
-import RadioButton from "@Components/radioButton/radioButton";
-import {ControlType, TFormProps} from "@Common/types/types";
-import formData from "@Common/dummy/formData";
-import InputLabel from "@Components/inputLabel/inputLabel";
-import Select from "@Components/select/select";
-import InputNumber from "@Components/inputNumber/inputNumber";
+import React, { FC } from 'react'
+import Heading from 'components/heading/heading'
+import RadioButton from 'components/radioButton/radioButton'
+import { ControlType, TFormProps } from 'common/types/types'
+import formData from 'common/dummy/formData'
+import InputLabel from 'components/inputLabel/inputLabel'
+import Select from 'components/select/select'
+import InputNumber from 'components/inputNumber/inputNumber'
+import { Wrapper } from 'common/styles/components/Wrapper'
 
-const CountryHouse: VFC<TFormProps> = ({control}) => {
-  const controls = control as ControlType;
+const CountryHouse: FC<TFormProps> = ({ control }) => {
+  const controls = control as ControlType
   return (
     <>
       <Heading>Об объекте</Heading>
-      <div className="wrapper">
+      <Wrapper>
         <InputLabel>Количество комнат</InputLabel>
         <Select name={'Rooms'} control={controls} formData={formData.rooms}/>
         <InputLabel>Отопление</InputLabel>
@@ -20,18 +21,18 @@ const CountryHouse: VFC<TFormProps> = ({control}) => {
         <InputLabel>Тип строения</InputLabel>
         <RadioButton name={'BuildingType'} control={controls} formData={formData.buildingType}/>
         <InputLabel>Площадь</InputLabel>
-        <div className='d-flex'>
-          <InputNumber name={'Area_all'} control={controls} label={'Общая'} square/>
-          <InputNumber name={'Area_live'} control={controls} label={'Жилая'} square/>
-          <InputNumber name={'Area_kitchen'} control={controls} label={'Кухня'} square/>
+        <div className="d-flex">
+          <InputNumber name={'AreaAll'} control={controls} label={'Общая'} square />
+          <InputNumber name={'AreaLive'} control={controls} label={'Жилая'} square />
+          <InputNumber name={'AreaKitchen'} control={controls} label={'Кухня'} square />
         </div>
         <InputLabel>Площадь участка (в сотках)</InputLabel>
-        <InputNumber name={'Area_house'} control={controls} label={''} square={false}/>
+        <InputNumber name={'AreaHouse'} control={controls} label={''} square={false}/>
         <InputLabel>Этаж</InputLabel>
         <InputNumber name={'Floor'} control={controls} label={''} square={false}/>
-      </div>
+      </Wrapper>
     </>
-  );
-};
+  )
+}
 
-export default CountryHouse;
+export default CountryHouse

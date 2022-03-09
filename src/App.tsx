@@ -1,7 +1,8 @@
-import React from 'react';
-import FirstStepPage from "./pages/firstStep/FirstStepPage";
+import React, { FC } from 'react'
+import FirstStepPage from './pages/firstStep/FirstStepPage'
+import 'common/styles/global.scss'
 
-function App(): JSX.Element {
+const App: FC = () => {
   return (
     <div>
       <div className="container">
@@ -10,21 +11,20 @@ function App(): JSX.Element {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
-
+export default App
 
 /**
- *  configure tsconfig.json
+ *  configure tsconfig.json \\ complete
  *  ====1 step настройка стилей====
- *  - paths with lowercase
+ *  - paths with lowercase \\ complete
  *  - styled-component https://styled-components.com/
- *  - sass - install
- *  - global.scss import in the App.tsx и чтобы стили начали работать
+ *  - sass - install \\ complete
+ *  - global.scss import in the App.tsx и чтобы стили начали работать \\complete
  *  - styling by the style component
- * 
+ *
  *   ====2 step настройка кода====
  *  - noImplementic any - то есть когда я делаю any type ts должен не давать мне это делать
  *  - eslint|tslint|prettier - любой стандарт ссылки найдешь сам

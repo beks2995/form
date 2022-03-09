@@ -8,16 +8,16 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@Components/*": [
+      "components/*": [
         "./components/*"
       ],
-      "@Common/*": [
+      "common/*": [
         "./common/*"
       ],
-      "@Pages/*": [
+      "pages/*": [
         "./pages/*"
       ],
-      "@Utils/*": [
+      "utils/*": [
         "./utils/*"
       ]
     },

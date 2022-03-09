@@ -1,21 +1,14 @@
-import React from 'react';
-// remove space
-import RadioButton from "@Components/radioButton/radioButton";
-import {ControlType, TFieldWithRadio} from "@Common/types/types";
-// todo return type
-const Field = ({name, formData,control, label, optionType}: TFieldWithRadio) => {
+import React, { FC } from 'react'
+import RadioButton from 'components/radioButton/radioButton'
+import { TFieldWithRadio } from 'common/types/types'
+
+const Field: FC<TFieldWithRadio> = ({ name, formData, control, label, optionType }) => {
   return (
-    // <>
-    //   {label}
-    //   {optionType === 'button' ? <RadioButton name={name} control={control as ControlType} dummy={dummy} optionType={'button'}/> :
-    //     <RadioButton name={name} control={control as ControlType} dummy={dummy}/>}
-    // </>
-    // pls CHECK it
     <>
       {label}
-      <RadioButton name={name} control={control as ControlType} formData={formData} optionType={optionType}/>
+      <RadioButton name={name} control={control} formData={formData} optionType={optionType} />
     </>
-  );
-};
+  )
+}
 
-export default Field;
+export default Field

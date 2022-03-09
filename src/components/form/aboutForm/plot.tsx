@@ -1,20 +1,21 @@
-import React, {VFC} from 'react';
-import Heading from "@Components/heading/heading";
-import {ControlType, TFormProps} from "@Common/types/types";
-import InputLabel from "@Components/inputLabel/inputLabel";
-import InputNumber from "@Components/inputNumber/inputNumber";
+import React, { FC } from 'react'
+import Heading from 'components/heading/heading'
+import { ControlType, TFormProps } from 'common/types/types'
+import InputLabel from 'components/inputLabel/inputLabel'
+import InputNumber from 'components/inputNumber/inputNumber'
+import { Wrapper } from 'common/styles/components/Wrapper'
 
-const Plot: VFC<TFormProps> = ({control}) => {
-  const controls = control as ControlType;
+const Plot: FC<TFormProps> = ({ control }) => {
+  const controls = control as ControlType
   return (
     <>
       <Heading>Об объекте</Heading>
-      <div className="wrapper">
+      <Wrapper>
         <InputLabel>Площадь участка (в сотках)</InputLabel>
-        <InputNumber name={'Area_house'} control={controls} label={''} square={false}/>
-      </div>
+        <InputNumber name={'AreaHouse'} control={controls} label={''} square={false} />
+      </Wrapper>
     </>
-  );
-};
+  )
+}
 
-export default Plot;
+export default Plot

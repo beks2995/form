@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const Heading: React.FC = (props) => <h2>{props.children}</h2>;
+const Heading: React.FC = (props) => <h2>{props.children}</h2>
 
-export default Heading;
+export default Heading
