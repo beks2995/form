@@ -32,7 +32,10 @@
     "lint": "eslint . --ext .ts,.tsx"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{ts,tsx}": [
+      "npm run prettier",
+      "npm run lint"
+    ]
   },
   "eslintConfig": {
     "extends": [
