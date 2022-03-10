@@ -28,7 +28,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write ./src/**/*.{ts,tsx}"
+    "prettier": "prettier --write ./src/**/*.{ts,tsx}",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && npm run lint"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -61,6 +67,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
     "prettier": "^2.5.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2"
   }

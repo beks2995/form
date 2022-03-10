@@ -8,14 +8,14 @@ const config: Configuration = {
       {
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        test: /\.[tj]sx?$/
-      }
-    ]
+        test: /\.[tj]sx?$/,
+      },
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    plugins: [new TsconfigPathsPlugin()]
-  }
+    plugins: [new TsconfigPathsPlugin()],
+  },
 }
 
 export default config

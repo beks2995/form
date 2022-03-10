@@ -7,7 +7,7 @@ const App: FC = () => {
     <div>
       <div className="container">
         <div className="form-container">
-          <FirstStepPage/>
+          <FirstStepPage />
         </div>
       </div>
     </div>

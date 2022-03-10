@@ -8,9 +8,7 @@ import Field from 'components/form/component/field/field'
 import { Wrapper } from 'common/styles/components/Wrapper'
 
 const FirstStepPage: FC = function () {
-  const {
-    handleSubmit, reset, control, watchBuilding, onSubmit
-  } = useFormAddAd()
+  const { handleSubmit, reset, control, watchBuilding, onSubmit } = useFormAddAd()
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Heading>Тип объявления</Heading>
@@ -29,7 +27,7 @@ const FirstStepPage: FC = function () {
           ))
         }
       </Wrapper>
-      <DynamicForm watchBuilding={watchBuilding[0]} control={control}/>
+      <DynamicForm watchBuilding={watchBuilding[0]} control={control} />
 
       <button type="button" onClick={() => reset()}>
         Сбросить

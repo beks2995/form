@@ -7,8 +7,8 @@ import { defaultValues } from 'common/consts/consts'
 export const useFormAddAd = () => {
   const { handleSubmit, reset, watch, control } = useForm<TFormValues>({
     defaultValues,
-    mode: 'onTouched',
-    resolver: yupResolver(schema)
+    mode: 'onBlur',
+    resolver: yupResolver(schema),
   })
   const watchBuilding = watch(['Building'])
 

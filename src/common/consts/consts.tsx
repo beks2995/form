@@ -8,20 +8,20 @@ export const radioButtonsList: TFieldItem[] = [
     name: 'AccType',
     formData: formData.accType,
     optionType: 'button',
-    label: <InputLabel>Тип аккаунта</InputLabel>
+    label: <InputLabel>Тип аккаунта</InputLabel>,
   },
   {
     name: 'AdType',
     formData: formData.adType,
     optionType: 'button',
-    label: <InputLabel>Тип рекламы</InputLabel>
+    label: <InputLabel>Тип рекламы</InputLabel>,
   },
   {
     name: 'Building',
     formData: formData.building,
     optionType: 'default',
-    label: <InputLabel>Объект</InputLabel>
-  }
+    label: <InputLabel>Объект</InputLabel>,
+  },
 ]
 
 export const defaultValues = {
@@ -30,7 +30,7 @@ export const defaultValues = {
   BuildingType: 'brick',
   Rooms: '1',
   Series: 'elit',
-  Heating: 'central'
+  Heating: 'central',
 }
 
 // todo return type && move to utils|hooks, hooks with lowercase

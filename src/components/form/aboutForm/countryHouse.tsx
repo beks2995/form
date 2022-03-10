@@ -15,11 +15,11 @@ const CountryHouse: FC<TFormProps> = ({ control }) => {
       <Heading>Об объекте</Heading>
       <Wrapper>
         <InputLabel>Количество комнат</InputLabel>
-        <Select name={'Rooms'} control={controls} formData={formData.rooms}/>
+        <Select name={'Rooms'} control={controls} formData={formData.rooms} />
         <InputLabel>Отопление</InputLabel>
-        <Select name={'Heating'} control={controls} formData={formData.heating}/>
+        <Select name={'Heating'} control={controls} formData={formData.heating} />
         <InputLabel>Тип строения</InputLabel>
-        <RadioButton name={'BuildingType'} control={controls} formData={formData.buildingType}/>
+        <RadioButton name={'BuildingType'} control={controls} formData={formData.buildingType} />
         <InputLabel>Площадь</InputLabel>
         <div className="d-flex">
           <InputNumber name={'AreaAll'} control={controls} label={'Общая'} square />
@@ -27,9 +27,9 @@ const CountryHouse: FC<TFormProps> = ({ control }) => {
           <InputNumber name={'AreaKitchen'} control={controls} label={'Кухня'} square />
         </div>
         <InputLabel>Площадь участка (в сотках)</InputLabel>
-        <InputNumber name={'AreaHouse'} control={controls} label={''} square={false}/>
+        <InputNumber name={'AreaHouse'} control={controls} label={''} square={false} />
         <InputLabel>Этаж</InputLabel>
-        <InputNumber name={'Floor'} control={controls} label={''} square={false}/>
+        <InputNumber name={'Floor'} control={controls} label={''} square={false} />
       </Wrapper>
     </>
   )
