@@ -31,10 +31,8 @@
     "prettier": "prettier --write ./src/**/*.{ts,tsx}",
     "lint": "eslint . --ext .ts,.tsx"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier && npm run lint"
-    }
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "eslintConfig": {
     "extends": [
